@@ -19,6 +19,8 @@ class TicTacToe:
         """Сделать ход"""
         if 1 <= position <= 9 and self.board[position - 1] == " ":
             self.board[position - 1] = self.current_player
+            # Смена игрока
+            self.current_player = "O" if self.current_player == "X" else "X"
             return True
         return False
 
@@ -71,9 +73,6 @@ class TicTacToe:
                 self.print_board()
                 print("Ничья!")
                 break
-
-            # Смена игрока
-            self.current_player = "O" if self.current_player == "X" else "X"
 
 
 # Запуск игры
